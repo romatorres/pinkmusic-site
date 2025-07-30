@@ -1,5 +1,4 @@
 "use client";
-
 import React from 'react';
 
 const Partners: React.FC = () => {
@@ -42,73 +41,23 @@ const Partners: React.FC = () => {
     }
   ];
 
+  const extendedLogos = [...partnerLogos, ...partnerLogos];
+
   return (
-    <section className="partners-section">
-      <div className="partners-container">
-        {partnerLogos.map((logo, index) => (
-          <img
-            key={index}
-            src={logo.src}
-            alt={logo.alt}
-            className="partner-logo"
-            style={{ width: logo.width, aspectRatio: logo.aspectRatio }}
-          />
-        ))}
+    <section className="self-center mt-14 w-full max-w-[1440px] rounded-[36px] bg-white py-4 px-8 lg:px-34 flex flex-col items-center justify-center">
+      <div className="w-full overflow-hidden">
+        <div className="flex animate-scroll">
+          {extendedLogos.map((logo, index) => (
+            <img
+              key={index}
+              src={logo.src}
+              alt={logo.alt}
+              className="mx-8 self-stretch object-contain object-center flex-shrink-0 my-auto grayscale opacity-70 transition-all duration-300 ease-in-out hover:grayscale-0 hover:opacity-100 hover:scale-105"
+              style={{ width: logo.width, aspectRatio: logo.aspectRatio }}
+            />
+          ))}
+        </div>
       </div>
-
-      <style jsx>{`
-        .partners-section {
-          border-radius: 36px;
-          background-color: rgba(255, 255, 255, 1);
-          align-self: center;
-          display: flex;
-          margin-top: 56px;
-          width: 100%;
-          max-width: 1440px;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 16px 34px;
-        }
-
-        .partners-container {
-          display: flex;
-          align-items: center;
-          gap: 43px;
-          justify-content: start;
-          flex-wrap: wrap;
-        }
-
-        .partner-logo {
-          object-fit: contain;
-          object-position: center;
-          align-self: stretch;
-          flex-shrink: 0;
-          margin: auto 0;
-          filter: grayscale(100%);
-          opacity: 0.7;
-          transition: all 0.3s ease;
-        }
-
-        .partner-logo:hover {
-          filter: grayscale(0%);
-          opacity: 1;
-          transform: scale(1.05);
-        }
-
-        @media (max-width: 991px) {
-          .partners-section {
-            max-width: 100%;
-            margin-top: 40px;
-            padding: 0 20px;
-          }
-
-          .partners-container {
-            max-width: 100%;
-            gap: 30px;
-          }
-        }
-      `}</style>
     </section>
   );
 };
