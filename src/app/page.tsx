@@ -10,7 +10,12 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
-      {/* <h1 className="text-4xl font-bold mb-8">Bem-vindo ao Projeto Gemini</h1>
+    </main>
+  );
+}
+
+{
+  /* <h1 className="text-4xl font-bold mb-8">Bem-vindo ao Projeto Gemini</h1>
       <div className="flex space-x-4">
         <Link href="/login" passHref>
           <Button>Login</Button>
@@ -18,7 +23,5 @@ export default function Home() {
         <Link href="/register" passHref>
           <Button variant="secondary">Registro</Button>
         </Link>
-      </div> */}
-    </main>
-  );
+      </div> */
 }
