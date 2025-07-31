@@ -1,6 +1,6 @@
 "use client";
 
-import { PageContainer } from "../Page-container";
+import { PageContainer } from "../ui/Page-container";
 
 export default function Header() {
   return (

@@ -44,7 +44,7 @@ export function Sidebar() {
   const MobileMenuButton = () => (
     <button
       onClick={toggleMobileMenu}
-      className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-blue-600 text-white"
+      className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-emerald-600 text-white"
       aria-label="Menu"
     >
       <svg
@@ -79,7 +79,7 @@ export function Sidebar() {
 
       <div
         className={cn(
-          "h-screen bg-gray-900 text-white flex flex-col",
+          "h-screen bg-emerald-950 text-white flex flex-col",
           "fixed md:static z-40 transition-all duration-300 ease-in-out",
           isMobile
             ? isMobileMenuOpen
@@ -91,7 +91,7 @@ export function Sidebar() {
       >
         <div className="p-4 border-b border-gray-800">
           <h2 className="text-xl font-bold">Painel de Controle</h2>
-          <p className="text-xs text-blue-400">{role}</p>
+          <p className="text-xs text-emerald-200">{role}</p>
         </div>
 
         <nav className="flex-1 p-4 overflow-y-auto">
@@ -99,9 +99,9 @@ export function Sidebar() {
             <li>
               <Link
                 href="/dashboard"
-                className={`block p-2 rounded hover:bg-blue-700 transition ${
+                className={`block p-2 rounded hover:bg-emerald-600 transition ${
                   isActive("/dashboard") && pathname === "/dashboard"
-                    ? "bg-blue-700"
+                    ? "bg-emerald-600"
                     : ""
                 }`}
                 onClick={() => isMobile && setIsMobileMenuOpen(false)}
@@ -112,8 +112,8 @@ export function Sidebar() {
             <li>
               <Link
                 href="/dashboard/partners"
-                className={`block p-2 rounded hover:bg-blue-700 transition ${
-                  isActive("/dashboard/partners") ? "bg-blue-700" : ""
+                className={`block p-2 rounded hover:bg-emerald-600 transition ${
+                  isActive("/dashboard/partners") ? "bg-emerald-600" : ""
                 }`}
                 onClick={() => isMobile && setIsMobileMenuOpen(false)}
               >
@@ -125,8 +125,8 @@ export function Sidebar() {
               <div className="space-y-1">
                 <button
                   onClick={() => setSettingsOpen(!settingsOpen)}
-                  className={`w-full flex items-center justify-between p-2 rounded hover:bg-blue-700 transition ${
-                    isSettingsActive() ? "bg-blue-700" : ""
+                  className={`w-full flex items-center justify-between p-2 rounded hover:bg-emerald-600 transition ${
+                    isSettingsActive() ? "bg-emerald-600" : ""
                   }`}
                 >
                   <span>Configurações</span>
@@ -155,8 +155,8 @@ export function Sidebar() {
                 >
                   <Link
                     href="/dashboard/settings"
-                    className={`block p-2 rounded hover:bg-blue-600 transition ${
-                      pathname === "/dashboard/settings" ? "bg-blue-600" : ""
+                    className={`block p-2 rounded hover:bg-emerald-600 transition ${
+                      pathname === "/dashboard/settings" ? "bg-emerald-600" : ""
                     }`}
                     onClick={() => isMobile && setIsMobileMenuOpen(false)}
                   >
@@ -164,9 +164,9 @@ export function Sidebar() {
                   </Link>
                   <Link
                     href="/dashboard/settings/profile"
-                    className={`block p-2 rounded hover:bg-blue-600 transition ${
+                    className={`block p-2 rounded bg-emerald-600 transition ${
                       pathname === "/dashboard/settings/profile"
-                        ? "bg-blue-600"
+                        ? "bg-emerald-600"
                         : ""
                     }`}
                     onClick={() => isMobile && setIsMobileMenuOpen(false)}
@@ -182,7 +182,7 @@ export function Sidebar() {
         <div className="p-4 border-t border-gray-800">
           <button
             onClick={handleLogout}
-            className="w-full p-2 bg-red-600 hover:bg-red-700 rounded text-white transition"
+            className="w-full p-2 bg-red-500 hover:bg-red-600 rounded text-white transition"
           >
             Sair
           </button>
@@ -191,7 +191,7 @@ export function Sidebar() {
 
       {isMobile && isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30"
+          className="fixed inset-0 bg-black/80 z-30"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
