@@ -4,6 +4,5 @@
   "/login/page": "app/login/page.js",
   "/api/partners/route": "app/api/partners/route.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/partners/page": "app/dashboard/partners/page.js",
-  "/dashboard/settings/page": "app/dashboard/settings/page.js"
+  "/dashboard/partners/page": "app/dashboard/partners/page.js"
 }

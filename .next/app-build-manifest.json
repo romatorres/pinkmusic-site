@@ -31,11 +31,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/partners/page.js"
     ],
-    "/dashboard/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/settings/page.js"
-    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

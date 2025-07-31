@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 export function Sidebar() {
   const { role, clearToken } = useAuthStore();
@@ -79,7 +80,7 @@ export function Sidebar() {
 
       <div
         className={cn(
-          "h-screen bg-emerald-950 text-white flex flex-col",
+          "h-screen bg-[#51A44A] text-white flex flex-col",
           "fixed md:static z-40 transition-all duration-300 ease-in-out",
           isMobile
             ? isMobileMenuOpen
@@ -99,9 +100,9 @@ export function Sidebar() {
             <li>
               <Link
                 href="/dashboard"
-                className={`block p-2 rounded hover:bg-emerald-600 transition ${
+                className={`block p-2 rounded hover:bg-[#469D3F] transition ${
                   isActive("/dashboard") && pathname === "/dashboard"
-                    ? "bg-emerald-600"
+                    ? "bg-[#45973E]"
                     : ""
                 }`}
                 onClick={() => isMobile && setIsMobileMenuOpen(false)}
@@ -112,8 +113,8 @@ export function Sidebar() {
             <li>
               <Link
                 href="/dashboard/partners"
-                className={`block p-2 rounded hover:bg-emerald-600 transition ${
-                  isActive("/dashboard/partners") ? "bg-emerald-600" : ""
+                className={`block p-2 rounded hover:bg-[#469D3F] transition ${
+                  isActive("/dashboard/partners") ? "bg-[#45973E]" : ""
                 }`}
                 onClick={() => isMobile && setIsMobileMenuOpen(false)}
               >
@@ -125,8 +126,8 @@ export function Sidebar() {
               <div className="space-y-1">
                 <button
                   onClick={() => setSettingsOpen(!settingsOpen)}
-                  className={`w-full flex items-center justify-between p-2 rounded hover:bg-emerald-600 transition ${
-                    isSettingsActive() ? "bg-emerald-600" : ""
+                  className={`w-full flex items-center justify-between p-2 rounded hover:bg-[#469D3F] transition ${
+                    isSettingsActive() ? "bg-[#45973E]" : ""
                   }`}
                 >
                   <span>Configurações</span>
@@ -155,8 +156,8 @@ export function Sidebar() {
                 >
                   <Link
                     href="/dashboard/settings"
-                    className={`block p-2 rounded hover:bg-emerald-600 transition ${
-                      pathname === "/dashboard/settings" ? "bg-emerald-600" : ""
+                    className={`block p-2 rounded hover:bg-[#469D3F] transition ${
+                      pathname === "/dashboard/settings" ? "bg-[#45973E]" : ""
                     }`}
                     onClick={() => isMobile && setIsMobileMenuOpen(false)}
                   >
@@ -164,7 +165,7 @@ export function Sidebar() {
                   </Link>
                   <Link
                     href="/dashboard/settings/profile"
-                    className={`block p-2 rounded bg-emerald-600 transition ${
+                    className={`block p-2 rounded bg-[#45973E] transition ${
                       pathname === "/dashboard/settings/profile"
                         ? "bg-emerald-600"
                         : ""
@@ -180,12 +181,13 @@ export function Sidebar() {
         </nav>
 
         <div className="p-4 border-t border-gray-800">
-          <button
+          <Button
             onClick={handleLogout}
-            className="w-full p-2 bg-red-500 hover:bg-red-600 rounded text-white transition"
+            variant={"destructive"}
+            className="w-full"
           >
             Sair
-          </button>
+          </Button>
         </div>
       </div>
 
