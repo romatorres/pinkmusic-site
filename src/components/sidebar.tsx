@@ -109,6 +109,17 @@ export function Sidebar() {
                 Dashboard
               </Link>
             </li>
+            <li>
+              <Link
+                href="/dashboard/partners"
+                className={`block p-2 rounded hover:bg-blue-700 transition ${
+                  isActive("/dashboard/partners") ? "bg-blue-700" : ""
+                }`}
+                onClick={() => isMobile && setIsMobileMenuOpen(false)}
+              >
+                Parceiros
+              </Link>
+            </li>
 
             <li>
               <div className="space-y-1">

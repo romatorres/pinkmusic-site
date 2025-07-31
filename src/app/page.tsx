@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/site/Header";
 import Hero from "@/components/site/Hero";
+import Partners from "@/components/site/Partners";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="relative w-full">
         <Header />
         <Hero />
+        <Partners />
       </div>
     </main>
   );
