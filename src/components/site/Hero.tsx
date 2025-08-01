@@ -1,6 +1,14 @@
 "use client";
 
 import { PageContainer } from "../ui/Page-container";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Hero() {
   return (
@@ -33,11 +41,46 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex w-full items-center justify-center md:w-1/2">
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/4dc681923db7e4fceb664515a6b63e4a65a46320?placeholderIfAbsent=true"
-              alt="Musical Instruments"
-              className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
-            />
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 2000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
+              className="w-full max-w-xl"
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <img
+                    src={`/img/carousel/carousel-1.png`}
+                    alt={`Carousel image 1`}
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src={`/img/carousel/carousel-2.png`}
+                    alt={`Carousel image 2`}
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src={`/img/carousel/carousel-3.png`}
+                    alt={`Carousel image 3`}
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
+                  />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </PageContainer>
