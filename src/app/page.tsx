@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/site/Header";
 import Hero from "@/components/site/Hero";
 import Partners from "@/components/site/Partners";
+import Products from "@/components/site/Products";
 
 export default function Home() {
   return (
@@ -11,19 +12,8 @@ export default function Home() {
         <Header />
         <Hero />
         <Partners />
+        <Products />
       </div>
     </main>
   );
-}
-
-{
-  /* <h1 className="text-4xl font-bold mb-8">Bem-vindo ao Projeto Gemini</h1>
-      <div className="flex space-x-4">
-        <Link href="/login" passHref>
-          <Button>Login</Button>
-        </Link>
-        <Link href="/register" passHref>
-          <Button variant="secondary">Registro</Button>
-        </Link>
-      </div> */
 }

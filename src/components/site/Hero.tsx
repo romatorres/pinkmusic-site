@@ -9,8 +9,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import * as React from "react";
 
 export default function Hero() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
   return (
     <section className="relative flex w-full flex-col items-center justify-center bg-[image:var(--hero-background)] bg-cover bg-center py-20 md:min-h-[680px] md:py-28">
       <PageContainer>
@@ -42,39 +47,43 @@ export default function Hero() {
           </div>
           <div className="flex w-full items-center justify-center md:w-1/2">
             <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 2000,
-                  stopOnInteraction: false,
-                  stopOnMouseEnter: true,
-                }),
-              ]}
-              className="w-full max-w-xl"
+              plugins={[plugin.current]}
+              className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-[85%] lg:max-w-[90%] xl:max-w-[430px]"
             >
               <CarouselContent>
-                <CarouselItem>
+                <CarouselItem className="flex w-full items-center justify-center">
                   <img
                     src={`/img/carousel/carousel-1.png`}
                     alt={`Carousel image 1`}
-                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-[85%] lg:max-w-[90%] xl:max-w-[430px]"
                   />
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem className="flex w-full items-center justify-center">
                   <img
                     src={`/img/carousel/carousel-2.png`}
                     alt={`Carousel image 2`}
-                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-[85%] lg:max-w-[90%] xl:max-w-[430px]"
                   />
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem className="flex w-full items-center justify-center">
                   <img
                     src={`/img/carousel/carousel-3.png`}
                     alt={`Carousel image 3`}
-                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-full lg:max-w-[90%] xl:max-w-[509px]"
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-[85%] lg:max-w-[90%] xl:max-w-[430px]"
+                  />
+                </CarouselItem>
+                <CarouselItem className="flex w-full items-center justify-center">
+                  <img
+                    src={`/img/carousel/carousel-4.png`}
+                    alt={`Carousel image 4`}
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-[85%] lg:max-w-[90%] xl:max-w-[430px]"
+                  />
+                </CarouselItem>
+                <CarouselItem className="flex w-full items-center justify-center">
+                  <img
+                    src={`/img/carousel/carousel-5.png`}
+                    alt={`Carousel image 5`}
+                    className="h-auto w-full max-w-[85%] object-contain sm:max-w-[75%] md:max-w-[85%] lg:max-w-[90%] xl:max-w-[430px]"
                   />
                 </CarouselItem>
               </CarouselContent>
