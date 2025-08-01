@@ -61,7 +61,7 @@ const Products: React.FC = () => {
   return (
     <section className="self-center flex mt-[85px] w-full max-w-[1440px] flex-col items-stretch justify-between lg:mt-10 lg:max-w-full">
       <div className="flex w-full flex-col py-0.5">
-        <div className="grid gap-10 lg:gap-5 lg:px-5 mx-auto justify-center items-center w-full max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(280px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] xl:grid-cols-[repeat(4,280px)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5 mx-auto max-w-[1200px]">
           {allProducts.map((product, index) => (
             <ProductCard
               key={index}
