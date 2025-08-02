@@ -17,28 +17,28 @@ export default function Hero() {
   );
 
   return (
-    <section className="relative flex w-full flex-col items-center justify-center bg-[image:var(--hero-background)] bg-cover bg-center py-20 md:min-h-[680px] md:py-28">
+    <section className="relative flex w-full flex-col items-center justify-center bg-[url('/img/bg-hero.jpg')] bg-cover bg-center py-20 md:min-h-[680px] md:py-28">
       <PageContainer>
         <div className="flex w-full max-w-[1440px] flex-col-reverse items-center gap-8 md:gap-4 px-4 md:flex-row md:items-center md:justify-between mt-12">
           <div className="flex flex-col items-center justify-center text-center md:w-1/2 md:items-start md:text-left">
-            <h1 className="m-0 font-['Tanker'] text-5xl md:text-5xl lg:text-6xl xl:text-[80px] leading-tight text-[#326736]  md:leading-14  lg:leading-16 xl:leading-24 lg:tracking-[3.2px]">
+            <h1 className="m-0 font-['Tanker'] text-5xl md:text-5xl lg:text-6xl xl:text-[80px] leading-tight text-primary  md:leading-14  lg:leading-16 xl:leading-24 lg:tracking-[3.2px]">
               Tudo para <br />
               sua música <br />
               em um só lugar!
             </h1>
             <div className="mt-8 flex w-full flex-col items-center justify-center sm:flex-row md:mt-10 md:justify-start gap-6 md:gap-4">
-              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#51a44a] lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-white transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-[#4c8147] sm:w-auto">
+              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-primary lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-white transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-secondary sm:w-auto">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/8dca641377c42bb08a329a6e7eb77ad963160914?placeholderIfAbsent=true"
+                  src="/img/icon-store.svg"
                   alt="E-commerce Icon"
                   className="aspect-square w-[22px] object-contain"
                 />
                 E-commerce
               </button>
-              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-solid border-[#326736] bg-[#deebe1] lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-[#326736] transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-green-200 sm:w-auto">
+              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/a22671fb7ccc03adffbe793bd1ce888011bbee5d?placeholderIfAbsent=true"
-                  alt="Store Icon"
+                  src="/img/icon-location.svg"
+                  alt="Store Localização"
                   className="aspect-square w-[22px] object-contain"
                 />
                 Loja Física
