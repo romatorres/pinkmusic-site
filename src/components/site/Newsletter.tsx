@@ -1,171 +1,51 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { PageContainer } from "../ui/Page-container";
 
-const Newsletter: React.FC = () => {
-  const [email, setEmail] = useState('');
+export default function Newsletter() {
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
   };
 
   return (
-    <section className="newsletter-section">
-      <div className="newsletter-content">
-        <div className="newsletter-text">
-          <h2 className="newsletter-title">Assine nossa newsletter!</h2>
-          <p className="newsletter-description">
-            Cadastre-se e fique por dentro<br />
-            das nossas novidades e ofertas!
-          </p>
+    <section className="flex w-full flex-col items-stretch justify-center bg-tertiary">
+      <PageContainer>
+        <div className="flex min-h-[160px] w-full flex-wrap items-center justify-between py-[34px]">
+          <div className="my-auto min-w-[240px] w-[301px] self-stretch font-normal">
+            <h2 className="mb-[7px] font-tanker text-[30px] leading-none tracking-[0.6px] text-primary">
+              Assine nossa newsletter!
+            </h2>
+            <p className="m-0 text-[18px] leading-[22px] tracking-[0.36px] text-foreground">
+              Cadastre-se e fique por dentro
+              <br />
+              das nossas novidades e ofertas!
+            </p>
+          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="my-auto flex min-w-[240px] flex-wrap items-center justify-start gap-[39px] self-stretch whitespace-nowrap text-[20px] font-medium leading-[1.3] lg:max-w-full lg:whitespace-normal"
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="E-MAIL"
+              className="placeholder:text-primary/70 my-auto min-h-[60px] min-w-[240px] w-[415px] self-stretch rounded-[36px] border border-primary bg-transparent px-7 py-[17px] text-[20px] font-medium leading-[1.3] text-primary focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 lg:whitespace-normal lg:px-5"
+              required
+            />
+            <button
+              type="submit"
+              className="my-auto flex min-h-[60px] w-[220px] cursor-pointer self-stretch items-center justify-center rounded-[30px] border-none bg-primary px-[74px] py-[17px] text-[20px] font-medium leading-[1.3] text-background transition-colors duration-300 ease-in-out hover:bg-primary/80 lg:whitespace-normal lg:px-5"
+            >
+              Assinar
+            </button>
+          </form>
         </div>
-        
-        <form onSubmit={handleSubmit} className="newsletter-form">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="E-MAIL"
-            className="email-input"
-            required
-          />
-          <button type="submit" className="subscribe-btn">
-            Assinar
-          </button>
-        </form>
-      </div>
-
-      <style jsx>{`
-        .newsletter-section {
-          display: flex;
-          width: 100%;
-          flex-direction: column;
-          align-items: stretch;
-          justify-content: center;
-        }
-
-        .newsletter-content {
-          background-color: rgba(130, 215, 111, 1);
-          display: flex;
-          min-height: 160px;
-          width: 100%;
-          align-items: center;
-          gap: 100px;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          padding: 34px 240px;
-        }
-
-        .newsletter-text {
-          align-self: stretch;
-          min-width: 240px;
-          font-weight: 400;
-          width: 301px;
-          margin: auto 0;
-        }
-
-        .newsletter-title {
-          color: rgba(50, 103, 54, 1);
-          letter-spacing: 0.6px;
-          font: 30px/1 Tanker, -apple-system, Roboto, Helvetica, sans-serif;
-          margin: 0 0 7px 0;
-        }
-
-        .newsletter-description {
-          color: rgba(21, 45, 23, 1);
-          letter-spacing: 0.36px;
-          margin: 0;
-          font: 18px/22px Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .newsletter-form {
-          align-self: stretch;
-          display: flex;
-          min-width: 240px;
-          align-items: center;
-          gap: 39px;
-          white-space: nowrap;
-          justify-content: start;
-          flex-wrap: wrap;
-          margin: auto 0;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .email-input {
-          border-radius: 36px;
-          align-self: stretch;
-          display: flex;
-          min-width: 240px;
-          min-height: 60px;
-          align-items: center;
-          gap: 10px;
-          color: rgba(50, 103, 54, 1);
-          justify-content: start;
-          width: 415px;
-          margin: auto 0;
-          padding: 17px 28px;
-          border: 1px solid rgba(50, 103, 54, 1);
-          background: transparent;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .email-input::placeholder {
-          color: rgba(50, 103, 54, 0.7);
-        }
-
-        .email-input:focus {
-          outline: none;
-          border-color: rgba(81, 164, 74, 1);
-          box-shadow: 0 0 0 2px rgba(81, 164, 74, 0.2);
-        }
-
-        .subscribe-btn {
-          border-radius: 30px;
-          background-color: rgba(50, 103, 54, 1);
-          align-self: stretch;
-          display: flex;
-          min-height: 60px;
-          align-items: center;
-          gap: 10px;
-          color: rgba(222, 235, 225, 1);
-          justify-content: center;
-          width: 220px;
-          margin: auto 0;
-          padding: 17px 74px;
-          border: none;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .subscribe-btn:hover {
-          background-color: rgba(40, 83, 44, 1);
-        }
-
-        @media (max-width: 991px) {
-          .newsletter-content {
-            max-width: 100%;
-            padding: 0 20px;
-            gap: 40px;
-          }
-
-          .newsletter-form {
-            max-width: 100%;
-            white-space: initial;
-          }
-
-          .email-input,
-          .subscribe-btn {
-            white-space: initial;
-            padding: 0 20px;
-          }
-        }
-      `}</style>
+      </PageContainer>
     </section>
   );
-};
-
-export default Newsletter;
+}

@@ -1,10 +1,9 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Header from "@/components/site/Header";
 import Hero from "@/components/site/Hero";
 import Partners from "@/components/site/Partners";
 import Products from "@/components/site/Products";
 import About from "@/components/site/About";
+import Newsletter from "@/components/site/Newsletter";
 
 export default function Home() {
   return (
@@ -15,6 +14,7 @@ export default function Home() {
         <Partners />
         <Products />
         <About />
+        <Newsletter />
       </div>
     </main>
   );
