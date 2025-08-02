@@ -4,6 +4,7 @@ import Header from "@/components/site/Header";
 import Hero from "@/components/site/Hero";
 import Partners from "@/components/site/Partners";
 import Products from "@/components/site/Products";
+import About from "@/components/site/About";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <Partners />
         <Products />
+        <About />
       </div>
     </main>
   );

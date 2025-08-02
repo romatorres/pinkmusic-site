@@ -831,6 +831,9 @@
   .border-input {
     border-color: var(--input);
   }
+  .border-primary {
+    border-color: var(--primary);
+  }
   .border-secondary {
     border-color: var(--secondary);
   }
@@ -932,6 +935,9 @@
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
+  }
+  .px-20 {
+    padding-inline: calc(var(--spacing) * 20);
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
@@ -1391,6 +1397,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--secondary);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }

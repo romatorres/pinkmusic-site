@@ -64,10 +64,10 @@ const Products: React.FC = () => {
           ))}
         </div>
 
-        <button className="rounded-3xl self-center flex mt-[50px] items-center gap-2 text-[#326736] justify-center px-7 py-2.5 text-base font-medium font-inter border border-[#326736] bg-transparent cursor-pointer transition-colors ease-in-out duration-300 hover:bg-[rgba(50,103,54,0.1)] lg:mt-10 lg:px-5">
+        <button className="rounded-3xl self-center flex items-center gap-3 text-primary hover:text-white justify-center px-10 py-3 text-base font-medium border border-primary bg-transparent cursor-pointer transition-colors ease-in-out duration-300 hover:bg-secondary mt-[50px] lg:mt-10">
           Ver Todos
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/ff738113924932c7366088f3761ea4e8dea0ab48?placeholderIfAbsent=true"
+            src="/img/icon-arrow_forward.svg"
             alt="Arrow"
             className="aspect-square object-contain object-center w-5 self-stretch shrink-0 my-auto"
           />
