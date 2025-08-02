@@ -1,4 +1,4 @@
-// File: C:\Web\pinkmusic-site\src\app\api\partners\route.ts
+// File: C:\Web-Pc\pinkmusic-site\src\app\api\partners\route.ts
 import * as entry from '../../../../../src/app/api/partners/route.js'
 import type { NextRequest } from 'next/server.js'
 

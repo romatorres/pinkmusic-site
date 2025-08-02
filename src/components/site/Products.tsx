@@ -10,8 +10,6 @@ const Products: React.FC = () => {
         "https://api.builder.io/api/v1/image/assets/TEMP/b2de47d3b1ff6274693603d4712d7dd91dacbf06?placeholderIfAbsent=true",
       title: "Violão Takamine GD14",
       price: "5.590",
-      heartIcon:
-        "https://api.builder.io/api/v1/image/assets/TEMP/a2619061f03e5223ec31f28258fa979a8ab74049?placeholderIfAbsent=true",
       addToCartIcon:
         "https://api.builder.io/api/v1/image/assets/TEMP/f8e06c367bcd69edc7e979b31e31ae4f8d0aba08?placeholderIfAbsent=true",
       detailsIcon:
@@ -22,8 +20,6 @@ const Products: React.FC = () => {
         "https://api.builder.io/api/v1/image/assets/TEMP/87f4370f0ea9f3b250d87c12a2acd7ed03192bdb?placeholderIfAbsent=true",
       title: "Violão Takamine GD14",
       price: "5.590",
-      heartIcon:
-        "https://api.builder.io/api/v1/image/assets/TEMP/a2619061f03e5223ec31f28258fa979a8ab74049?placeholderIfAbsent=true",
       addToCartIcon:
         "https://api.builder.io/api/v1/image/assets/TEMP/d122c206894981f19354de9cf86a694ed22dbc95?placeholderIfAbsent=true",
       detailsIcon:
@@ -34,8 +30,7 @@ const Products: React.FC = () => {
         "https://api.builder.io/api/v1/image/assets/TEMP/b2de47d3b1ff6274693603d4712d7dd91dacbf06?placeholderIfAbsent=true",
       title: "Violão Takamine GD14",
       price: "5.590",
-      heartIcon:
-        "https://api.builder.io/api/v1/image/assets/TEMP/a2619061f03e5223ec31f28258fa979a8ab74049?placeholderIfAbsent=true",
+
       addToCartIcon:
         "https://api.builder.io/api/v1/image/assets/TEMP/06f5183c8767e05a92ef1eafaea043f32b39b4f1?placeholderIfAbsent=true",
       detailsIcon:
@@ -46,8 +41,6 @@ const Products: React.FC = () => {
         "https://api.builder.io/api/v1/image/assets/TEMP/585a57e57640569883e07eecc02d7e6dd782a609?placeholderIfAbsent=true",
       title: "Violão Takamine GD14",
       price: "5.590",
-      heartIcon:
-        "https://api.builder.io/api/v1/image/assets/TEMP/a2619061f03e5223ec31f28258fa979a8ab74049?placeholderIfAbsent=true",
       addToCartIcon:
         "https://api.builder.io/api/v1/image/assets/TEMP/a791f9e67e8b2f009014bccaf4599048444e0028?placeholderIfAbsent=true",
       detailsIcon:

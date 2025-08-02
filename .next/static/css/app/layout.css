@@ -695,6 +695,9 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
@@ -724,9 +727,6 @@
   }
   .gap-\[98px\] {
     gap: 98px;
-  }
-  .gap-\[100px\] {
-    gap: 100px;
   }
   .space-y-1 {
     :where(& > :not(:last-child)) {
@@ -763,9 +763,6 @@
   }
   .overflow-hidden {
     overflow: hidden;
-  }
-  .overflow-x-auto {
-    overflow-x: auto;
   }
   .overflow-y-auto {
     overflow-y: auto;
@@ -846,6 +843,9 @@
   .border-input {
     border-color: var(--input);
   }
+  .border-secondary {
+    border-color: var(--secondary);
+  }
   .bg-\[\#51A44A\] {
     background-color: #51A44A;
   }
@@ -855,14 +855,14 @@
   .bg-\[\#45973E\] {
     background-color: #45973E;
   }
+  .bg-\[\#C4E1C2\] {
+    background-color: #C4E1C2;
+  }
   .bg-\[\#deebe1\] {
     background-color: #deebe1;
   }
   .bg-\[rgba\(81\,164\,74\,1\)\] {
     background-color: rgba(81,164,74,1);
-  }
-  .bg-\[rgba\(196\,225\,194\,1\)\] {
-    background-color: rgba(196,225,194,1);
   }
   .bg-background {
     background-color: var(--background);
@@ -957,8 +957,11 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
-  .px-\[15px\] {
-    padding-inline: 15px;
+  .px-9 {
+    padding-inline: calc(var(--spacing) * 9);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
   }
   .py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5);
@@ -992,9 +995,6 @@
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pr-5 {
-    padding-right: calc(var(--spacing) * 5);
   }
   .pb-\[212px\] {
     padding-bottom: 212px;
@@ -1116,6 +1116,9 @@
   }
   .text-primary-foreground {
     color: var(--primary-foreground);
+  }
+  .text-secondary {
+    color: var(--secondary);
   }
   .text-secondary-foreground {
     color: var(--secondary-foreground);
@@ -1393,12 +1396,62 @@
       }
     }
   }
+  .hover\:bg-secondary\/5 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--secondary);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--secondary) 5%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-secondary\/10 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--secondary);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--secondary) 10%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-secondary\/50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--secondary);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--secondary) 50%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-secondary\/80 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--secondary);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--secondary) 80%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-secondary\/85 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--secondary);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--secondary) 85%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-secondary\/90 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--secondary);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--secondary) 90%, transparent);
         }
       }
     }
@@ -1714,11 +1767,6 @@
       display: flex;
     }
   }
-  .md\:grid {
-    @media (width >= 48rem) {
-      display: grid;
-    }
-  }
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
@@ -1749,11 +1797,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  .md\:grid-cols-\[repeat\(auto-fit\,minmax\(250px\,1fr\)\)\] {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    }
-  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -1774,11 +1817,6 @@
       justify-content: space-between;
     }
   }
-  .md\:justify-center {
-    @media (width >= 48rem) {
-      justify-content: center;
-    }
-  }
   .md\:justify-start {
     @media (width >= 48rem) {
       justify-content: flex-start;
@@ -1787,21 +1825,6 @@
   .md\:gap-4 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 4);
-    }
-  }
-  .md\:gap-5 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 5);
-    }
-  }
-  .md\:overflow-x-auto {
-    @media (width >= 48rem) {
-      overflow-x: auto;
-    }
-  }
-  .md\:px-5 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 5);
     }
   }
   .md\:px-7 {
@@ -1933,11 +1956,6 @@
   .xl\:max-w-\[430px\] {
     @media (width >= 80rem) {
       max-width: 430px;
-    }
-  }
-  .xl\:grid-cols-\[repeat\(4\,280px\)\] {
-    @media (width >= 80rem) {
-      grid-template-columns: repeat(4,280px);
     }
   }
   .xl\:text-\[80px\] {
@@ -2121,15 +2139,17 @@
 :root {
   --radius: 0.625rem;
   --background: #deebe1;
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --foreground: #152d17;
+  --card: #c4e1c2;
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #51a44a;
+  --primary: #326736;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: #51a44a;
   --secondary-foreground: oklch(0.205 0 0);
+  --tertiary: #82d76f;
+  --tertiary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -2137,7 +2157,7 @@
   --destructive: #eb5757;
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: #c8dace;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
