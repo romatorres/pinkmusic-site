@@ -17,58 +17,59 @@ export default function Header() {
       <PageContainer>
         <div className="flex h-[70px] w-full items-center justify-between">
           {/* Logo */}
-          <div className="relative lg:w-[240px] lg:h-[70px] w-[160px] h-[47px]">
+          <div className="relative w-[170px] md:w-[200px] lg:w-[240px] aspect-[240/70.5]">
             <Image
-              src="/img/logo_pink.png"
-              alt="Pink Music Logo"
+              src="/img/logo-pink.svg"
+              alt="Logo da empresa"
               fill
-              className="object-cover"
+              className="object-contain"
+              priority
             />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-12 md:flex">
-            <nav className="flex items-center gap-7 text-base font-medium text-[#326736]">
+            <nav className="flex items-center gap-7 text-base font-medium text-primary cursor-pointer">
               <a
                 href="#"
-                className="transition-colors duration-300 ease-in-out hover:cursor-pointer hover:text-green-700"
+                className="transition-colors duration-300 ease-in-out hover:text-secondary"
               >
                 Home
               </a>
               <a
                 href="#"
-                className="transition-colors duration-300 ease-in-out hover:cursor-pointer hover:text-green-700"
+                className="transition-colors duration-300 ease-in-out hover:text-secondary"
               >
                 Produtos
               </a>
               <a
                 href="#"
-                className="transition-colors duration-300 ease-in-out hover:cursor-pointer hover:text-green-700"
+                className="transition-colors duration-300 ease-in-out hover:text-secondary"
               >
                 Sobre
               </a>
               <a
                 href="#"
-                className="transition-colors duration-300 ease-in-out hover:cursor-pointer hover:text-green-700"
+                className="transition-colors duration-300 ease-in-out hover:text-secondary"
               >
                 Contatos
               </a>
             </nav>
             <div className="flex items-center gap-4">
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/804ad3bd0609d5dee97ad7e644be77669066aa0e?placeholderIfAbsent=true"
-                alt="Social Icon 1"
-                className="h-[40px] w-[40px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
+                src="/img/icon-facebook.svg"
+                alt="Icon Social Facebook"
+                className="h-[44px] w-[44px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
               />
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/82077677f30f1a6c27e23547256dcf422e20529b?placeholderIfAbsent=true"
-                alt="Social Icon 2"
-                className="h-[40px] w-[40px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
+                src="/img/icon-instagram.svg"
+                alt="Icon Social Instagram"
+                className="h-[44px] w-[44px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
               />
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/d5532ba1e2b9742510f2301fd2c33b673a35e0af?placeholderIfAbsent=true"
-                alt="Social Icon 3"
-                className="h-[40px] w-[40px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
+                src="/img/icon-twitter.svg"
+                alt="Icon Social Twitter"
+                className="h-[44px] w-[44px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
               />
             </div>
           </div>
@@ -77,45 +78,45 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <button className="text-[#326736]">
+                <button className="text-primary">
                   <MenuIcon size={32} />
                 </button>
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle className="text-2xl text-[#326736]">
+                  <SheetTitle className="text-2xl text-primary">
                     Menu
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="mx-6 mt-8 flex flex-col gap-5 text-base font-medium text-[#326736]">
-                  <a href="#" className="hover:text-green-700">
+                <nav className="mx-6 mt-8 flex flex-col gap-5 text-base font-medium text-primary">
+                  <a href="#" className="hover:text-secondary">
                     Home
                   </a>
-                  <a href="#" className="hover:text-green-700">
+                  <a href="#" className="hover:text-secondary">
                     Produtos
                   </a>
-                  <a href="#" className="hover:text-green-700">
+                  <a href="#" className="hover:text-secondary">
                     Sobre
                   </a>
-                  <a href="#" className="hover:text-green-700">
+                  <a href="#" className="hover:text-secondary">
                     Contatos
                   </a>
                 </nav>
                 <div className="mt-8 flex items-center justify-center gap-6">
                   <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/804ad3bd0609d5dee97ad7e644be77669066aa0e?placeholderIfAbsent=true"
-                    alt="Social Icon 1"
-                    className="h-[40px] w-[40px] object-contain"
+                    src="/img/icon-facebook.svg"
+                    alt="Icon Social Facebook"
+                    className="h-[44px] w-[44px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
                   />
                   <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/82077677f30f1a6c27e23547256dcf422e20529b?placeholderIfAbsent=true"
-                    alt="Social Icon 2"
-                    className="h-[40px] w-[40px] object-contain"
+                    src="/img/icon-instagram.svg"
+                    alt="Icon Social Instagram"
+                    className="h-[44px] w-[44px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
                   />
                   <img
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/d5532ba1e2b9742510f2301fd2c33b673a35e0af?placeholderIfAbsent=true"
-                    alt="Social Icon 3"
-                    className="h-[40px] w-[40px] object-contain"
+                    src="/img/icon-twitter.svg"
+                    alt="Icon Social Twitter"
+                    className="h-[44px] w-[44px] object-contain transition-transform duration-300 ease-in-out hover:scale-110 hover:cursor-pointer"
                   />
                 </div>
               </SheetContent>
