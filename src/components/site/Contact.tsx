@@ -46,7 +46,7 @@ export default function Contact() {
   return (
     <section className="flex flex-col w-full items-center">
       <PageContainer>
-        <div className="flex md:flex-row flex-col w-full items-center justify-between flex-wrap py-8">
+        <div className="flex md:flex-row flex-col w-full items-center justify-between flex-wrap py-8 gap-8">
           <form
             onSubmit={handleSubmit}
             className="self-stretch min-w-[240px] whitespace-nowrap w-[652px] my-auto font-medium text-xl max-w-full md:whitespace-normal"
@@ -97,65 +97,81 @@ export default function Contact() {
               value={formData.message}
               onChange={handleInputChange}
               placeholder="MENSAGEM"
-              className="rounded-[40px] flex mt-6 min-h-[176px] w-full items-start gap-2.5 justify-start p-5 px-7 border border-primary text-primary bg-transparent font-medium text-xl resize-y placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 md:whitespace-normal md:px-5 md:pb-24"
+              className="rounded-[40px] flex min-h-[176px] w-full items-start gap-2.5 justify-start border border-primary text-primary bg-transparent font-medium text-xl resize-y placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20 md:whitespace-normal p-5 px-7 md:px-5 md:pb-24 mt-6"
               required
             />
 
             <button
               type="submit"
-              className="rounded-full bg-primary flex mt-10 min-h-[56px] w-full items-center gap-2.5 text-white justify-center py-4 px-32 border-none cursor-pointer transition-colors duration-300 ease-in-out font-medium text-xl hover:bg-secondary md:whitespace-normal"
+              className="rounded-full bg-primary flex min-h-[56px] w-full items-center gap-2.5 text-white justify-center mt-8 py-4 px-32 border-none cursor-pointer transition-colors duration-300 ease-in-out font-medium text-xl hover:bg-secondary md:whitespace-normal"
             >
               Enviar
             </button>
           </form>
 
-          <div className="self-stretch flex min-w-[240px] flex-col items-start justify-start my-auto gap-5 max-w-full">
-            <div className="flex items-center justify-start w-full gap-6">
+          <div className="self-stretch flex min-w-[240px] flex-col items-start justify-start sm:my-0 my-6 gap-5 max-w-full">
+            <div className="flex items-center justify-start w-full sm:gap-6 gap-4">
               <img
                 src="/img/icon-location_contacts.svg"
                 alt="Localização"
-                className="aspect-square object-contain object-center w-20 self-stretch flex-shrink-0 my-auto"
+                className="aspect-square object-contain object-center sm:w-20 w-16 self-stretch flex-shrink-0 my-auto"
               />
               <div>
-                <h3 className="text-primary self-start text-2xl font-normal mb-2">
+                <h3 className="text-primary self-start sm:text-2xl text-xl font-normal sm:mb-2 mb-0">
                   LOCALIZAÇÃO
                 </h3>
-                <p className="text-foreground m-0 font-medium text-xl">
+                <p className="text-foreground m-0 font-medium sm:text-xl text-lg">
                   FEIRA DE SANTANA, BAHIA, BRASIL
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center justify-start w-full gap-6">
+            <div className="flex items-center justify-start w-full sm:gap-6 gap-4">
               <img
                 src="/img/icon-whats_contacts.svg"
                 alt="WhatsApp"
-                className="aspect-square object-contain object-center w-20 self-stretch flex-shrink-0 my-auto"
+                className="aspect-square object-contain object-center sm:w-20 w-16 self-stretch flex-shrink-0 my-auto"
               />
               <div>
-                <h3 className="text-primary self-start text-2xl font-normal mb-2">
+                <h3 className="text-primary self-start sm:text-2xl text-xl font-normal sm:mb-2 mb-0">
                   WHATSAPP
                 </h3>
-                <p className="text-foreground m-0 font-medium text-xl">
+                <p className="text-foreground m-0 font-medium sm:text-xl text-lg">
                   75 99966-1614
                 </p>
               </div>
             </div>
 
-            <div className="self-stretch flex w-full flex-col items-stretch">
-              <h3 className="text-green-800 self-start text-2xl font-normal mb-2">
-                TELEFONE
-              </h3>
-              <p className="text-black m-0 font-medium text-xl">75 3221-1530</p>
+            <div className="flex items-center justify-start w-full sm:gap-6 gap-4">
+              <img
+                src="/img/icon-phone_contacts.svg"
+                alt="Telefone"
+                className="aspect-square object-contain object-center sm:w-20 w-16 self-stretch flex-shrink-0 my-auto"
+              />
+              <div>
+                <h3 className="text-primary self-start sm:text-2xl text-xl font-normal sm:mb-2 mb-0">
+                  TELEFONE
+                </h3>
+                <p className="text-foreground m-0 font-medium sm:text-xl text-lg">
+                  75 3221-1530
+                </p>
+              </div>
             </div>
 
-            <div className="self-stretch flex w-full flex-col items-stretch md:whitespace-normal">
-              <h3 className="text-green-800 self-start text-2xl font-normal mb-2">
-                E-MAIL
-              </h3>
-              <p className="text-black m-0 font-medium text-xl">
-                VENDAS@PINKMUSIC.COM.BR
-              </p>
+            <div className="flex items-center justify-start w-full sm:gap-6 gap-4">
+              <img
+                src="/img/icon-email_contacts.svg"
+                alt="Email"
+                className="aspect-square object-contain object-center sm:w-20 w-16 self-stretch flex-shrink-0 my-auto"
+              />
+              <div>
+                <h3 className="text-primary self-start sm:text-2xl text-xl font-normal sm:mb-2 mb-0">
+                  E-MAIL
+                </h3>
+                <p className="text-foreground m-0 font-medium sm:text-xl text-lg">
+                  VENDAS@PINKMUSIC.COM.BR
+                </p>
+              </div>
             </div>
           </div>
         </div>
