@@ -1,360 +1,165 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { toast } from "sonner";
+import { PageContainer } from "../ui/Page-container";
 
-const Contact: React.FC = () => {
+export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Contact form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    try {
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log("Contact form submitted:", formData);
+      toast.success("Formulário enviado com sucesso!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+      toast.error("Falha ao enviar formulário. Tente novamente mais tarde.");
+    }
   };
 
   return (
-    <section className="contact-section">
-      <div className="contact-content">
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-row">
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
+    <section className="flex flex-col w-full items-center">
+      <PageContainer>
+        <div className="flex md:flex-row flex-col w-full items-center justify-between flex-wrap py-8">
+          <form
+            onSubmit={handleSubmit}
+            className="self-stretch min-w-[240px] whitespace-nowrap w-[652px] my-auto font-medium text-xl max-w-full md:whitespace-normal"
+          >
+            <div className="flex w-full items-center gap-3 justify-start flex-wrap mb-6 md:flex-col md:gap-3">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="NOME"
+                className="rounded-full self-stretch flex min-w-[240px] w-full items-center gap-2.5 justify-start flex-grow flex-shrink my-auto py-4 px-7 border border-primary text-primary bg-transparent font-medium text-xl placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="E-MAIL"
+                className="rounded-full self-stretch flex min-w-[240px] w-full items-center gap-2.5 justify-start flex-grow flex-shrink my-auto py-4 px-7 border border-primary text-primary bg-transparent font-medium text-xl placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20"
+                required
+              />
+            </div>
+            <div className="flex w-full items-center gap-3 justify-start flex-wrap mb-6 md:flex-col md:gap-3">
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                placeholder="TELEFONE"
+                className="rounded-full self-stretch flex min-w-[240px] w-full items-center gap-2.5 justify-start flex-grow flex-shrink my-auto py-4 px-7 border border-primary text-primary bg-transparent font-medium text-xl placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20"
+                required
+              />
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleInputChange}
+                placeholder="ASSUNTO"
+                className="rounded-full self-stretch flex min-w-[240px] w-full items-center gap-2.5 justify-start flex-grow flex-shrink my-auto py-4 px-7 border border-primary text-primary bg-transparent font-medium text-xl placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20"
+                required
+              />
+            </div>
+
+            <textarea
+              name="message"
+              value={formData.message}
               onChange={handleInputChange}
-              placeholder="NOME"
-              className="form-input"
+              placeholder="MENSAGEM"
+              className="rounded-[40px] flex mt-6 min-h-[176px] w-full items-start gap-2.5 justify-start p-5 px-7 border border-primary text-primary bg-transparent font-medium text-xl resize-y placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 md:whitespace-normal md:px-5 md:pb-24"
               required
             />
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              placeholder="E-MAIL"
-              className="form-input"
-              required
-            />
-          </div>
-          
-          <div className="form-row">
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              placeholder="TELEFONE"
-              className="form-input"
-              required
-            />
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleInputChange}
-              placeholder="ASSUNTO"
-              className="form-input"
-              required
-            />
-          </div>
-          
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            placeholder="MENSAGEM"
-            className="message-input"
-            required
-          />
-          
-          <button type="submit" className="submit-btn">
-            Enviar
-          </button>
-        </form>
-        
-        <div className="contact-info">
-          <div className="info-item">
-            <h3 className="info-title">LOCALIZAÇÃO</h3>
-            <p className="info-text">FEIRA DE SANTNA, BAHIA, BRASIL</p>
-          </div>
-          
-          <div className="info-item-with-icon">
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/9191264c9497f6db4ac426002578341ebd642661?placeholderIfAbsent=true"
-              alt="WhatsApp"
-              className="contact-icon"
-            />
-            <div className="info-content">
-              <h3 className="info-title">whatsapp</h3>
-              <p className="info-text">75 99966-1614</p>
+
+            <button
+              type="submit"
+              className="rounded-full bg-primary flex mt-10 min-h-[56px] w-full items-center gap-2.5 text-white justify-center py-4 px-32 border-none cursor-pointer transition-colors duration-300 ease-in-out font-medium text-xl hover:bg-secondary md:whitespace-normal"
+            >
+              Enviar
+            </button>
+          </form>
+
+          <div className="self-stretch flex min-w-[240px] flex-col items-start justify-start my-auto gap-5 max-w-full">
+            <div className="flex items-center justify-start w-full gap-6">
+              <img
+                src="/img/icon-location_contacts.svg"
+                alt="Localização"
+                className="aspect-square object-contain object-center w-20 self-stretch flex-shrink-0 my-auto"
+              />
+              <div>
+                <h3 className="text-primary self-start text-2xl font-normal mb-2">
+                  LOCALIZAÇÃO
+                </h3>
+                <p className="text-foreground m-0 font-medium text-xl">
+                  FEIRA DE SANTANA, BAHIA, BRASIL
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-start w-full gap-6">
+              <img
+                src="/img/icon-whats_contacts.svg"
+                alt="WhatsApp"
+                className="aspect-square object-contain object-center w-20 self-stretch flex-shrink-0 my-auto"
+              />
+              <div>
+                <h3 className="text-primary self-start text-2xl font-normal mb-2">
+                  WHATSAPP
+                </h3>
+                <p className="text-foreground m-0 font-medium text-xl">
+                  75 99966-1614
+                </p>
+              </div>
+            </div>
+
+            <div className="self-stretch flex w-full flex-col items-stretch">
+              <h3 className="text-green-800 self-start text-2xl font-normal mb-2">
+                TELEFONE
+              </h3>
+              <p className="text-black m-0 font-medium text-xl">75 3221-1530</p>
+            </div>
+
+            <div className="self-stretch flex w-full flex-col items-stretch md:whitespace-normal">
+              <h3 className="text-green-800 self-start text-2xl font-normal mb-2">
+                E-MAIL
+              </h3>
+              <p className="text-black m-0 font-medium text-xl">
+                VENDAS@PINKMUSIC.COM.BR
+              </p>
             </div>
           </div>
-          
-          <div className="info-item">
-            <h3 className="info-title">TELEFONE</h3>
-            <p className="info-text">75 3221-1530</p>
-          </div>
-          
-          <div className="info-item">
-            <h3 className="info-title">E-MAIL</h3>
-            <p className="info-text">VENDAS@PINKMUSIC.COM.BR</p>
-          </div>
         </div>
-      </div>
-
-      <style jsx>{`
-        .contact-section {
-          display: flex;
-          margin-top: 91px;
-          width: 100%;
-          align-items: center;
-          gap: 100px;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          padding: 0 240px;
-        }
-
-        .contact-content {
-          display: flex;
-          width: 100%;
-          align-items: center;
-          gap: 100px;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
-
-        .contact-form {
-          align-self: stretch;
-          min-width: 240px;
-          white-space: nowrap;
-          width: 652px;
-          margin: auto 0;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .form-row {
-          display: flex;
-          width: 100%;
-          align-items: center;
-          gap: 12px;
-          justify-content: start;
-          flex-wrap: wrap;
-          margin-bottom: 24px;
-        }
-
-        .form-input {
-          border-radius: 36px;
-          align-self: stretch;
-          display: flex;
-          min-width: 240px;
-          min-height: 60px;
-          align-items: center;
-          gap: 10px;
-          justify-content: start;
-          flex-grow: 1;
-          flex-shrink: 1;
-          width: 256px;
-          margin: auto 0;
-          padding: 17px 28px;
-          border: 1px solid rgba(50, 103, 54, 1);
-          color: rgba(50, 103, 54, 1);
-          background: transparent;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .form-input::placeholder {
-          color: rgba(50, 103, 54, 0.7);
-        }
-
-        .form-input:focus {
-          outline: none;
-          border-color: rgba(81, 164, 74, 1);
-          box-shadow: 0 0 0 2px rgba(81, 164, 74, 0.2);
-        }
-
-        .message-input {
-          border-radius: 40px;
-          display: flex;
-          margin-top: 24px;
-          min-height: 176px;
-          width: 100%;
-          align-items: start;
-          gap: 10px;
-          justify-content: start;
-          padding: 20px 28px;
-          border: 1px solid rgba(50, 103, 54, 1);
-          color: rgba(50, 103, 54, 1);
-          background: transparent;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-          resize: vertical;
-        }
-
-        .message-input::placeholder {
-          color: rgba(50, 103, 54, 0.7);
-        }
-
-        .message-input:focus {
-          outline: none;
-          border-color: rgba(81, 164, 74, 1);
-          box-shadow: 0 0 0 2px rgba(81, 164, 74, 0.2);
-        }
-
-        .submit-btn {
-          border-radius: 28px;
-          background-color: rgba(81, 164, 74, 1);
-          display: flex;
-          margin-top: 40px;
-          min-height: 56px;
-          width: 100%;
-          align-items: center;
-          gap: 10px;
-          color: rgba(255, 255, 255, 1);
-          justify-content: center;
-          padding: 15px 238px;
-          border: none;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        .submit-btn:hover {
-          background-color: rgba(71, 144, 64, 1);
-        }
-
-        .contact-info {
-          align-self: stretch;
-          display: flex;
-          min-width: 240px;
-          flex-direction: column;
-          align-items: start;
-          justify-content: start;
-          width: 438px;
-          margin: auto 0;
-          gap: 20px;
-        }
-
-        .info-item {
-          align-self: stretch;
-          display: flex;
-          width: 100%;
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .info-item-with-icon {
-          display: flex;
-          align-items: center;
-          gap: 28px;
-          justify-content: start;
-        }
-
-        .contact-icon {
-          aspect-ratio: 1;
-          object-fit: contain;
-          object-position: center;
-          width: 80px;
-          align-self: stretch;
-          flex-shrink: 0;
-          margin: auto 0;
-        }
-
-        .info-content {
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
-          width: 147px;
-        }
-
-        .info-title {
-          color: rgba(50, 103, 54, 1);
-          align-self: start;
-          font: 400 24px/1 Tanker, -apple-system, Roboto, Helvetica, sans-serif;
-          margin: 0 0 7px 0;
-        }
-
-        .info-text {
-          color: rgba(0, 0, 0, 1);
-          margin: 0;
-          font: 500 20px/1.3 Inter, -apple-system, Roboto, Helvetica, sans-serif;
-        }
-
-        @media (max-width: 991px) {
-          .contact-section {
-            max-width: 100%;
-            margin-top: 40px;
-            padding: 0 20px;
-            flex-direction: column;
-            gap: 40px;
-          }
-
-          .contact-content {
-            max-width: 100%;
-            flex-direction: column;
-            gap: 40px;
-          }
-
-          .contact-form {
-            max-width: 100%;
-            white-space: initial;
-          }
-
-          .form-row {
-            max-width: 100%;
-            white-space: initial;
-            flex-direction: column;
-            gap: 12px;
-          }
-
-          .form-input {
-            width: 100%;
-            white-space: initial;
-            padding: 0 20px;
-          }
-
-          .message-input {
-            max-width: 100%;
-            white-space: initial;
-            padding: 0 20px 100px;
-          }
-
-          .submit-btn {
-            max-width: 100%;
-            white-space: initial;
-            padding: 0 20px;
-          }
-
-          .contact-info {
-            max-width: 100%;
-          }
-
-          .info-item {
-            white-space: initial;
-          }
-        }
-      `}</style>
+      </PageContainer>
     </section>
   );
-};
-
-export default Contact;
+}

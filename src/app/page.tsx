@@ -4,6 +4,8 @@ import Partners from "@/components/site/Partners";
 import Products from "@/components/site/Products";
 import About from "@/components/site/About";
 import Newsletter from "@/components/site/Newsletter";
+import Contact from "@/components/site/Contact";
+import Footer from "@/components/site/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <Products />
         <About />
         <Newsletter />
+        <Contact />
+        <Footer />
       </div>
     </main>
   );
