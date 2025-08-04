@@ -4,11 +4,11 @@ import { PageContainer } from "../ui/Page-container";
 
 export default function About() {
   return (
-    <section className="bg-sidebar-primary py-16 lg:mt-[52px] mt-10 lg:py-[68px] ">
+    <section className="bg-sidebar-primary pt-10 mt-10">
       <PageContainer>
         <div className="flex w-full flex-col items-center lg:flex-row lg:justify-between">
           <div className="flex w-full flex-col items-start text-left lg:max-w-2xl">
-            <div className="flex items-center gap-[7px] whitespace-nowrap font-tanker text-3xl text-foreground lg:whitespace-initial">
+            <div className="flex items-center gap-2 whitespace-nowrap font-tanker text-3xl text-foreground lg:whitespace-initial">
               <div className="my-auto h-7 w-2 shrink-0 self-stretch bg-secondary" />
               <h2 className="my-auto self-stretch font-normal">Sobre</h2>
             </div>
