@@ -2,6 +2,11 @@
 
 import React from "react";
 import ProductCard from "./ProductCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const Products: React.FC = () => {
   const products = [
@@ -54,7 +59,8 @@ const Products: React.FC = () => {
   return (
     <section className="self-center flex mt-[85px] w-full max-w-[1440px] flex-col items-stretch justify-between lg:mt-10 lg:max-w-full">
       <div className="flex w-full flex-col py-0.5">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5 mx-auto max-w-[1200px]">
+        {/* Grid for medium screens and up */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-5 mx-auto max-w-[1200px]">
           {allProducts.map((product, index) => (
             <ProductCard
               key={index}
@@ -62,6 +68,25 @@ const Products: React.FC = () => {
               className={`product-${index}`}
             />
           ))}
+        </div>
+
+        {/* Carousel for small screens */}
+        <div className="md:hidden px-5">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-[640px] mx-auto"
+          >
+            <CarouselContent>
+              {allProducts.map((product, index) => (
+                <CarouselItem key={index} className="basis-[296px]">
+                  <ProductCard {...product} className={`product-${index}`} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
 
         <button className="rounded-3xl self-center flex items-center gap-3 text-primary hover:text-white justify-center px-10 py-3 text-base font-medium border border-primary bg-transparent cursor-pointer transition-colors ease-in-out duration-300 hover:bg-secondary mt-[50px] lg:mt-10">
