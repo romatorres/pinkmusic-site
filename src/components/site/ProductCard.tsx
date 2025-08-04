@@ -29,13 +29,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div className="rounded-[30px] bg-card absolute z-0 flex min-h-[260px] w-[280px] max-w-[280px] items-start gap-2.5 justify-end right-0 bottom-0 h-[260px] pt-4 pb-[212px] lg:pb-[100px]">
               <div className="flex px-3 w-full items-center justify-between flex-1">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/a2619061f03e5223ec31f28258fa979a8ab74049?placeholderIfAbsent=true"
+                  src="/img/icon-logo.svg"
                   alt="Simbolo da Logo"
                   className="aspect-square object-contain object-center w-8 self-stretch shrink-0 my-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                 />
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/f0c09e680cfc3603c93097736811fdb812a1ff0c?placeholderIfAbsent=true"
-                  alt="Share"
+                  src="/img/icon-heart.svg"
+                  alt="Heart Icon"
                   className="aspect-square object-contain object-center w-6 self-stretch shrink-0 my-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                 />
               </div>

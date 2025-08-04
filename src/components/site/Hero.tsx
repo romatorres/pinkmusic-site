@@ -35,7 +35,7 @@ export default function Hero() {
                 />
                 E-commerce
               </button>
-              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto">
+              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap border-primary border-[1px] rounded-full bg-white lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto">
                 <img
                   src="/img/icon-location.svg"
                   alt="Store Localização"

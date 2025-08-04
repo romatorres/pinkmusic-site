@@ -6,12 +6,27 @@ export default function ProductDetails() {
       <PageContainer>
         <div className="mt-56">
           <div className="flex text-foreground mt-10">
-            <span className="font-semibold">Categorias</span> - Audio - Mesas{" "}
+            <p>
+              <span className="font-semibold"> Categorias </span> - Audio -
+              Mesas
+            </p>
           </div>
 
           <div className="flex justify-between w-full">
             <div className="flex flex-col shrink-0 gap-4 items-start px-0 py-6 h-[620px] w-[620px] max-md:px-0 max-md:py-5 max-md:w-full max-md:h-auto">
               <div className="flex gap-2.5 items-center justify-center p-16 rounded-3xl bg-card h-[620px] w-[620px] max-md:p-10 max-md:w-full max-md:h-auto max-md:aspect-[1/1] max-sm:p-5">
+                <div className="flex px-3 w-full items-center justify-between flex-1">
+                  <img
+                    src="/img/icon-logo.svg"
+                    alt="Simbolo da Logo"
+                    className="aspect-square object-contain object-center w-8 self-stretch shrink-0 my-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                  <img
+                    src="/img/icon-heart.svg"
+                    alt="Heart Icon"
+                    className="aspect-square object-contain object-center w-6 self-stretch shrink-0 my-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
                 <img
                   src="/img/carousel/carousel-1.png"
                   alt="Mesa Yamaha DM7"
@@ -46,7 +61,7 @@ export default function ProductDetails() {
                     />
                     E-commerce
                   </button>
-                  <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto">
+                  <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap border-primary border-[1px] rounded-full bg-white lg:px-10 lg:py-4 md:px-7 md:py-3 px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto">
                     <img
                       src="/img/icon-location.svg"
                       alt="Store Localização"
@@ -77,10 +92,10 @@ export default function ProductDetails() {
           </div>
 
           <div className="flex flex-col gap-14 max-md:gap-8 max-sm:gap-6 items-start h-[724px] w-[1280px] my-10 max-md:w-full max-md:h-auto">
-            <h2 className="self-stretch text-2xl font-medium text-neutral-800 max-md:text-xl max-sm:text-lg">
+            <h2 className="self-stretch text-2xl font-medium text-foreground max-md:text-xl max-sm:text-lg">
               Características
             </h2>
-            <div className="self-stretch text-base whitespace-pre-line text-neutral-800 max-md:text-sm max-sm:text-sm max-sm:leading-snug">
+            <div className="self-stretch text-sm whitespace-pre-line text-foreground md:text-base max-sm:leading-snug">
               A série DM7 é uma mesa de mistura digital versátil que combina uma
               qualidade de som ímpar com uma operação suave e possibilidades de
               expansão que oferecem aos utilizadores um fluxo de trabalho de
@@ -119,7 +134,7 @@ export default function ProductDetails() {
               </ul>
             </div>
 
-            <div className="flex gap-2 text-xl leading-5 text-neutral-800 max-md:text-base max-sm:text-sm">
+            <div className="flex gap-2 leading-5 text-foreground md:text-base text-sm">
               <p className="font-semibold">Mais Informações:</p>
               <p>https//: yamaha.com.br</p>
             </div>

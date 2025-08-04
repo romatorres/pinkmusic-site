@@ -1,4 +1,4 @@
-// File: C:\Web\pinkmusic-site\src\app\site\product\page.tsx
+// File: C:\Web-Pc\pinkmusic-site\src\app\site\product\page.tsx
 import * as entry from '../../../../../src/app/site/product/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

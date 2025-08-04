@@ -34,7 +34,7 @@ export default function About() {
                 />
                 E-commerce
               </button>
-              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto lg:px-10 lg:py-4">
+              <button className="flex w-full items-center justify-center gap-2 whitespace-nowrap border-primary border-[1px] rounded-full bg-white px-7 py-3 text-lg font-semibold text-primary transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-background sm:w-auto lg:px-10 lg:py-4">
                 <img
                   src="/img/icon-location.svg"
                   alt="Store Localização"
