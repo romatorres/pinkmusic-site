@@ -2,8 +2,8 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground py-14">
-      <div className="sm:text-base text-sm text-center text-white">
+    <footer className="bg-primary py-10">
+      <div className="md:text-base sm:text-sm text-xs text-center text-white  ">
         © 2024 Copyright Pink Music Instrumentos Musicais
       </div>
     </footer>

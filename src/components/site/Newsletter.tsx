@@ -13,7 +13,7 @@ export default function Newsletter() {
   return (
     <section className="flex w-full flex-col justify-center bg-tertiary">
       <PageContainer>
-        <div className="flex flex-col lg:flex-row flex-wrap justify-between items-center py-8">
+        <div className="flex flex-col lg:flex-row flex-wrap justify-between items-center py-12">
           <div className="flex flex-col items-start justify-start flex-1/3 font-normal">
             <h2 className="mb-2 font-tanker text-3xl leading-none tracking-[0.6px] text-primary">
               Assine nossa newsletter!
