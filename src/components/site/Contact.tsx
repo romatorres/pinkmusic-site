@@ -46,12 +46,12 @@ export default function Contact() {
   return (
     <section className="flex flex-col w-full items-center">
       <PageContainer>
-        <div className="flex md:flex-row flex-col w-full items-center justify-between flex-wrap py-8 gap-8">
+        <div className="flex md:flex-row flex-col w-full items-center justify-between flex-wrap py-12 gap-8">
           <form
             onSubmit={handleSubmit}
             className="self-stretch min-w-[240px] whitespace-nowrap w-[652px] my-auto font-medium text-xl max-w-full md:whitespace-normal"
           >
-            <div className="flex w-full items-center gap-3 justify-start flex-wrap mb-6 md:flex-col md:gap-3">
+            <div className="flex md:flex-col items-center justify-start flex-wrap w-full mb-6 gap-3 md:gap-3">
               <input
                 type="text"
                 name="name"
@@ -70,8 +70,7 @@ export default function Contact() {
                 className="rounded-full self-stretch flex min-w-[240px] w-full items-center gap-2.5 justify-start flex-grow flex-shrink my-auto py-4 px-7 border border-primary text-primary bg-transparent font-medium text-xl placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20"
                 required
               />
-            </div>
-            <div className="flex w-full items-center gap-3 justify-start flex-wrap mb-6 md:flex-col md:gap-3">
+
               <input
                 type="tel"
                 name="phone"
@@ -90,17 +89,15 @@ export default function Contact() {
                 className="rounded-full self-stretch flex min-w-[240px] w-full items-center gap-2.5 justify-start flex-grow flex-shrink my-auto py-4 px-7 border border-primary text-primary bg-transparent font-medium text-xl placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20"
                 required
               />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="MENSAGEM"
+                className="rounded-[40px] flex min-h-[176px] w-full items-start gap-2.5 justify-start border border-primary text-primary bg-transparent font-medium text-xl resize-y placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20 md:whitespace-normal p-5 px-7 md:px-5 md:pb-24 "
+                required
+              />
             </div>
-
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              placeholder="MENSAGEM"
-              className="rounded-[40px] flex min-h-[176px] w-full items-start gap-2.5 justify-start border border-primary text-primary bg-transparent font-medium text-xl resize-y placeholder-primary/70 focus:outline-none focus:border-secondary focus:ring-2 focus:bg-secondary/20 md:whitespace-normal p-5 px-7 md:px-5 md:pb-24 mt-6"
-              required
-            />
-
             <button
               type="submit"
               className="rounded-full bg-primary flex min-h-[56px] w-full items-center gap-2.5 text-white justify-center mt-8 py-4 px-32 border-none cursor-pointer transition-colors duration-300 ease-in-out font-medium text-xl hover:bg-secondary md:whitespace-normal"
