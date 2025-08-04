@@ -46,7 +46,10 @@ export default function Contact() {
   return (
     <section className="flex flex-col w-full items-center">
       <PageContainer>
-        <h1 className="text-primary text-5xl font-tanker pt-14">Contatos</h1>
+        <div className="flex items-center gap-2 whitespace-nowrap font-tanker text-3xl text-foreground lg:whitespace-initial pt-12">
+          <div className="my-auto h-7 w-2 shrink-0 self-stretch bg-secondary" />
+          <h2 className="my-auto self-stretch font-normal">Contatos</h2>
+        </div>
         <div className="flex md:flex-row flex-col w-full items-center justify-between flex-wrap py-12 gap-8">
           <form
             onSubmit={handleSubmit}
